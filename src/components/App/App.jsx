@@ -37,7 +37,7 @@ const App = () => {
     localStorage.setItem("data", JSON.stringify(state));
     const date = state.map(obj => obj.date);
     const bmi = state.map(obj => obj.bmi);
-    let newData = { data, bmi };
+    let newData = { date, bmi };
     setData(newData);
   }, [state]);
 

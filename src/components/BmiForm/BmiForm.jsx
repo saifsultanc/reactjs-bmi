@@ -11,9 +11,10 @@ const BmiForm = ({ change }) => {
 
   const handleChange = e => {
     const date = new Date().toLocaleString().split(",")[0];
+    console.log(e.target.name, e.target.value);
     setState({
       ...state,
-      [e.target.Name]: e.target.value,
+      [e.target.name]: e.target.value,
       date
     });
   };
@@ -38,7 +39,7 @@ const BmiForm = ({ change }) => {
             type="tel"
             maxLength="3"
             placeholder="50"
-            value={state.weight}
+            defaultValue={state.weight}
             onChange={handleChange}
           />
         </div>
@@ -50,7 +51,7 @@ const BmiForm = ({ change }) => {
             type="tel"
             maxLength="3"
             placeholder="176"
-            value={state.height}
+            defaultValue={state.height}
             onChange={handleChange}
           />
         </div>
